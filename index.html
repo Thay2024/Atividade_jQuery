@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Feedback</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <main class="container">
+        <div id="feedback-form-wrapper">
+            <header>
+                <h2>Feedback de Serviço</h2>
+                <p>Sua opinião é muito importante para nós!</p>
+            </header>
+            
+            <form id="feedback-form">
+                <div class="form-group">
+                    <label for="nome">Seu Nome:</label>
+                    <input type="text" id="nome" name="nome">
+                </div>
+                <div class="form-group">
+                    <label for="servico">Qual serviço você utilizou?</label>
+                    <select id="servico" name="servico">
+                        <option value="">-- Selecione um serviço --</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Sua Avaliação:</label>
+                    <div class="star-rating">
+                        <span class="star" data-value="1">★</span><span class="star" data-value="2">★</span><span class="star" data-value="3">★</span><span class="star" data-value="4">★</span><span class="star" data-value="5">★</span>
+                    </div>
+                    <input type="hidden" id="rating" name="rating" value="0">
+                </div>
+                <div class="form-group">
+                    <label for="comentario">Seu Comentário:</label>
+                    <textarea id="comentario" name="comentario" rows="4"></textarea>
+                </div>
+                <button type="submit" id="submit-btn">Enviar Feedback</button>
+                <p id="form-error"></p>
+            </form>
+        </div>
+        <div id="thank-you-message">
+            <h2>Obrigado!</h2><p>Seu feedback foi enviado com sucesso.</p>
+        </div>
+    </main>
+
+    <section class="container recent-feedbacks">
+        <h3>Últimos Feedbacks Recebidos</h3>
+        <ul id="feedbacks-list">
+            </ul>
+        <button id="carregar-mais-btn">Carregar Mais</button>
+    </section>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
